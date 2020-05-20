@@ -1,0 +1,10 @@
+name: 'Install jhipster'
+description: 'Install jhipster'
+inputs:
+  ref:
+    description: 'Repository reference'
+    required: false
+    default: 'master'
+runs:
+  using: 'node12'
+  main: 'index.js'

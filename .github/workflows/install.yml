@@ -1,0 +1,13 @@
+name: Build
+on: [push, pull_request]
+jobs:
+    test:
+        name: unit tests
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '12'
+            - uses: ./install
+            - run: jhipster --version

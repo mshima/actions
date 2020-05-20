@@ -1,0 +1,15 @@
+name: Build
+on: [push, pull_request]
+jobs:
+    test:
+        name: unit tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - uses: ./hello
+              with:
+                  who-to-greet: foo
+            # Use the output from the `hello` step
+            - name: Get the output time
+              run: echo "The time was ${{ steps.hello.outputs.time }}"
